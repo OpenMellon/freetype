@@ -9,7 +9,7 @@ import (
 	"image"
 	"math"
 
-	"github.com/OpenMellon/openpdf/freetype/raster"
+	"github.com/OpenMellon/freetype/raster"
 	"golang.org/x/image/font"
 	"golang.org/x/image/math/fixed"
 )

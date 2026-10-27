@@ -23,7 +23,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/OpenMellon/openpdf/freetype/raster"
+	"github.com/OpenMellon/freetype/raster"
 	"golang.org/x/image/math/fixed"
 )
 

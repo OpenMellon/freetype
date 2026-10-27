@@ -24,7 +24,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/OpenMellon/openpdf/freetype"
+	"github.com/OpenMellon/freetype"
 	"golang.org/x/image/font"
 )
 

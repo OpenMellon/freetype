@@ -13,8 +13,8 @@ import (
 	"image"
 	"image/draw"
 
-	"github.com/OpenMellon/openpdf/freetype/raster"
-	"github.com/OpenMellon/openpdf/freetype/truetype"
+	"github.com/OpenMellon/freetype/raster"
+	"github.com/OpenMellon/freetype/truetype"
 	"golang.org/x/image/font"
 	"golang.org/x/image/math/fixed"
 )

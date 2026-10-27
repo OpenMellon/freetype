@@ -25,7 +25,7 @@ import (
 	"math"
 	"os"
 
-	"github.com/OpenMellon/openpdf/freetype/truetype"
+	"github.com/OpenMellon/freetype/truetype"
 	"golang.org/x/image/font"
 	"golang.org/x/image/math/fixed"
 )
