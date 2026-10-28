@@ -364,8 +364,8 @@ func (g *GlyphBuf) loadSimple(glyf []byte, ne int) (program []byte) {
 }
 
 func (g *GlyphBuf) loadCompound(recursion uint32, uhm HMetric, i Index,
-	glyf []byte, useMyMetrics bool) error {
-
+	glyf []byte, useMyMetrics bool,
+) error {
 	// Flags for decoding a compound glyph. These flags are documented at
 	// http://developer.apple.com/fonts/TTRefMan/RM06/Chap6glyf.html.
 	const (

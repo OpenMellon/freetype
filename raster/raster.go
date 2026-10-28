@@ -211,7 +211,6 @@ func (r *Rasterizer) Add1(b fixed.Point26_6) {
 	if y0i == y1i {
 		// There is only one scanline.
 		r.scan(y0i, x0, y0f, x1, y1f)
-
 	} else if dx == 0 {
 		// This is a vertical line segment. We avoid calling r.scan and instead
 		// manipulate r.area and r.cover directly.

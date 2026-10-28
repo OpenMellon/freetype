@@ -12,7 +12,7 @@ set -e
 : ${FONTDIR:=/usr/share/fonts/truetype}
 
 ln -sf $FONTDIR/droid/DroidSansJapanese.ttf       x-droid-sans-japanese.ttf
-ln -sf $FONTDIR/msttcorefonts/Arial_Bold.ttf      x-arial-bold.ttf 
+ln -sf $FONTDIR/msttcorefonts/Arial_Bold.ttf      x-arial-bold.ttf
 ln -sf $FONTDIR/msttcorefonts/Times_New_Roman.ttf x-times-new-roman.ttf
 ln -sf $FONTDIR/ttf-dejavu/DejaVuSans-Oblique.ttf x-deja-vu-sans-oblique.ttf
 

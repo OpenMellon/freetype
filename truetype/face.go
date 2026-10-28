@@ -134,11 +134,12 @@ func (o *Options) subPixelsY() (value uint32, halfQuantum, mask fixed.Int26_6) {
 //
 // For example, q == 4 leads to a bias of 8 and a mask of 0xfffffff0, or -16,
 // because we want to round fractions of fixed.Int26_6 as:
-//	-  0 to  7 rounds to 0.
-//	-  8 to 23 rounds to 16.
-//	- 24 to 39 rounds to 32.
-//	- 40 to 55 rounds to 48.
-//	- 56 to 63 rounds to 64.
+//   - 0 to  7 rounds to 0.
+//   - 8 to 23 rounds to 16.
+//   - 24 to 39 rounds to 32.
+//   - 40 to 55 rounds to 48.
+//   - 56 to 63 rounds to 64.
+//
 // which means to add 8 and then bitwise-and with -16, in two's complement
 // representation.
 //
@@ -274,8 +275,8 @@ func (a *face) Kern(r0, r1 rune) fixed.Int26_6 {
 
 // Glyph satisfies the font.Face interface.
 func (a *face) Glyph(dot fixed.Point26_6, r rune) (
-	dr image.Rectangle, mask image.Image, maskp image.Point, advance fixed.Int26_6, ok bool) {
-
+	dr image.Rectangle, mask image.Image, maskp image.Point, advance fixed.Int26_6, ok bool,
+) {
 	// Quantize to the sub-pixel granularity.
 	dotX := (dot.X + a.subPixelBiasX) & a.subPixelMaskX
 	dotY := (dot.Y + a.subPixelBiasY) & a.subPixelMaskY

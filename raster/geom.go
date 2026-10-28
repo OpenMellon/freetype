@@ -8,6 +8,7 @@ package raster
 import (
 	"fmt"
 	"math"
+	"strings"
 
 	"golang.org/x/image/math/fixed"
 )
@@ -135,29 +136,29 @@ type Path []fixed.Int26_6
 
 // String returns a human-readable representation of a Path.
 func (p Path) String() string {
-	s := ""
+	var s strings.Builder
 	for i := 0; i < len(p); {
 		if i != 0 {
-			s += " "
+			s.WriteString(" ")
 		}
 		switch p[i] {
 		case 0:
-			s += "S0" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+3]))
+			s.WriteString("S0" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+3])))
 			i += 4
 		case 1:
-			s += "A1" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+3]))
+			s.WriteString("A1" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+3])))
 			i += 4
 		case 2:
-			s += "A2" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+5]))
+			s.WriteString("A2" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+5])))
 			i += 6
 		case 3:
-			s += "A3" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+7]))
+			s.WriteString("A3" + fmt.Sprint([]fixed.Int26_6(p[i+1:i+7])))
 			i += 8
 		default:
 			panic("freetype/raster: bad path")
 		}
 	}
-	return s
+	return s.String()
 }
 
 // Clear cancels any previous calls to p.Start or p.AddXxx.

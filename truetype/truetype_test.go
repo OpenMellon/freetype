@@ -320,7 +320,8 @@ func testScaling(t *testing.T, h font.Hinting) {
 			hintingStr = "with"
 		}
 		testFile, err := os.Open(fmt.Sprintf(
-			"../testdata/%s-%dpt-%s-hinting.txt", tc.name, tc.size, hintingStr))
+			"../testdata/%s-%dpt-%s-hinting.txt", tc.name, tc.size, hintingStr,
+		))
 		if err != nil {
 			t.Errorf("%s: Open: %v", tc.name, err)
 			continue

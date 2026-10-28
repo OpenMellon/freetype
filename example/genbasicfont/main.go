@@ -234,7 +234,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("format.Source: %v", err)
 	}
-	if err := os.WriteFile(*vr+".go", fmted, 0644); err != nil {
+	if err := os.WriteFile(*vr+".go", fmted, 0o644); err != nil {
 		log.Fatalf("os.WriteFile: %v", err)
 	}
 }

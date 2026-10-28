@@ -159,8 +159,8 @@ func (c *Context) drawContour(ps []truetype.Point, dx, dy fixed.Int26_6) {
 // to render the given glyph at the given sub-pixel offsets.
 // The 26.6 fixed point arguments fx and fy must be in the range [0, 1).
 func (c *Context) rasterize(glyph truetype.Index, fx, fy fixed.Int26_6) (
-	fixed.Int26_6, *image.Alpha, image.Point, error) {
-
+	fixed.Int26_6, *image.Alpha, image.Point, error,
+) {
 	if err := c.glyphBuf.Load(c.f, c.scale, glyph, c.hinting); err != nil {
 		return 0, nil, image.Point{}, err
 	}
@@ -196,8 +196,8 @@ func (c *Context) rasterize(glyph truetype.Index, fx, fy fixed.Int26_6) (
 // rasterize method. Unlike rasterize, p's co-ordinates do not have to be in
 // the range [0, 1).
 func (c *Context) glyph(glyph truetype.Index, p fixed.Point26_6) (
-	fixed.Int26_6, *image.Alpha, image.Point, error) {
-
+	fixed.Int26_6, *image.Alpha, image.Point, error,
+) {
 	// Split p.X and p.Y into their integer and fractional parts.
 	ix, fx := int(p.X>>6), p.X&0x3f
 	iy, fy := int(p.Y>>6), p.Y&0x3f
