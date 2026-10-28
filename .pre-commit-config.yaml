@@ -56,4 +56,3 @@ repos:
         name: max file tokens
         language: script
         entry: scripts/check-file-tokens.sh
-        exclude: ^truetype/hint\.go$
